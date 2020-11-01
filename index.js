@@ -124,3 +124,14 @@ function miniMaxSum(arr) {
  
 }
  
+function birthdayCakeCandles(candles) {
+    // take array and sort, then filter to find duplicate
+    // take the length of the new array
+   
+ 
+    candles.sort((a,b) => b-a);
+ 
+    return candles.filter(candle=> candle === candles[0]).length;
+ 
+}
+
