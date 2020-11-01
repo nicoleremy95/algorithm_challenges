@@ -33,3 +33,41 @@ function diagonalDifference(arr) {
         return 0
     }
 }
+
+
+// Complete the plusMinus function below.
+function plusMinus(arr) {
+    let positiveNum = 0;
+    let negativeNum = 0;
+    let zeroNum = 0;
+    let denominator = arr.length;
+ 
+    if(denominator>0 && denominator<=100){
+        arr.map(element=>{
+            if(element>0){
+                positiveNum ++
+            } else if(element<0){
+                negativeNum ++
+            } else {
+                zeroNum ++
+            }
+ 
+            return element
+        })
+        
+  
+  };
+    
+    let positiveDecimal = positiveNum/denominator;
+    let negativeDecimal = negativeNum/denominator;
+    let zeroDecimal = zeroNum/denominator;
+ 
+    let roundedPos = positiveDecimal.toFixed(6);
+    let roudnedNeg = negativeDecimal.toFixed(6);
+    let zeroNeg = zeroDecimal.toFixed(6);
+ 
+    console.log (roundedPos);
+    console.log (roudnedNeg);
+    console.log (zeroNeg);
+    
+}
