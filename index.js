@@ -71,3 +71,27 @@ function plusMinus(arr) {
     console.log (zeroNeg);
     
 }
+
+
+function staircase(n) {
+    //array 1 or arr[0] must have n-2 # or n-2 spaces 
+    //array 2 or arr[1] must have n-1 # or n-1 spaces
+    //array 3 or arr[2] must have n-0 # or n-n spaces 
+ 
+    let output = ''
+    //calculate the number of rows 
+    for (let i = 1; i <= n; i++) {
+        //calculat the number of spaces per row 
+        for (let s = n - 1; s >= i; s--) {
+            output += ' '
+        }
+        //calculate the number of # per row 
+        for (let h=1; h<=i; h++){
+            output += '#'
+        }
+        //start a new line after every row 
+        output += "\n"
+    }
+    //print the output 
+    console.log(output);
+}
