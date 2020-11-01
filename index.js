@@ -156,3 +156,22 @@ function gradingStudents(grades) {
     //print out final grades 
     console.log (output);
 }
+
+function gradingStudents(grades) {
+    // Write your code here
+    let output = [];
+    //conditional statement 
+    for (let i=0; i<grades.length; i ++){
+        let rounded = Math.ceil(grades[i]/5)*5
+        let diff = rounded - grades[i]
+        if (grades[i]>=38 && diff<3){
+            output.push(rounded)
+        } else if (grades[i]>=38 && diff>3){
+            output.push(grades[i])
+        } else {
+            output.push(grades[i])
+        }
+    }
+    //print out final grades 
+    return output;
+}
