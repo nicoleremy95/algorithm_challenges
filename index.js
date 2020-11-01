@@ -95,3 +95,32 @@ function staircase(n) {
     //print the output 
     console.log(output);
 }
+
+
+function miniMaxSum(arr) {
+    //find the smallest and largest 4 of the 5 integers and add them sort, pop, reduce method
+    //print each value with a space inbetween 
+ 
+    let initialMax = 0;
+    let initialMin = 0;
+    const reducer = (accumulator, item) => {
+        return accumulator + item;
+    };
+ 
+    //calcuate the max
+    let descending = [...arr].sort((a,b)=> b-a);
+    descending.pop();
+ 
+    const max = descending.reduce(reducer, initialMax);
+ 
+    //calculate the min
+    let asscending = [...arr].sort((a,b)=> a-b);
+    asscending.pop();
+ 
+    const min = asscending.reduce(reducer, initialMin);
+    
+    //print values
+    console.log(min + " " + max);
+ 
+}
+ 
