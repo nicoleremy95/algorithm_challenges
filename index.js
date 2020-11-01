@@ -135,3 +135,24 @@ function birthdayCakeCandles(candles) {
  
 }
 
+function gradingStudents(grades) {
+    // Write your code here
+    let output= [];
+    //conditional statement 
+    for (let i=0; i<grades.length; i ++){
+        let rounded = Math.ceil(grades[i]/5)*5
+        let diff = rounded - grades[i]
+        if(grades[i] < 40){
+            ouput += grades[i]
+        } else if (grades[i]>40 && diff<3){
+            output += rounded
+        } else if (grades[i]>40 && diff>3){
+            output+= grades[i]
+        } else if (grades[i]=100){
+            output+= grades[i]
+        }
+        output += '\n'
+    }
+    //print out final grades 
+    console.log (output);
+}
