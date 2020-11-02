@@ -175,3 +175,23 @@ function gradingStudents(grades) {
     //print out final grades 
     return output;
 }
+
+
+function countApplesAndOranges(s, t, a, b, apples, oranges) {
+    //for each element in the apple and orange array you must add a or b respesctivelly 
+    //then see if they fall within house range s<=location<=t
+
+    // const numApples = apples.map(apple => apple + a).filter(item => s <= item <= t).length;
+    // const numOranges = oranges.map(orange => orange + b).filter(item => s <= item <= t).length;
+
+    const applesMap = apples.map(apple => apple + a);
+    const applesNum = applesMap.filter(item => item >= s && item <= t).length;
+
+    const orangesMap = oranges.map(orange => orange + b);
+    const orangesNum = orangesMap.filter(item => item >= s && item <= t).length;
+
+    // //print on new line
+    console.log(applesNum + '\n' + orangesNum)
+
+}
+    
