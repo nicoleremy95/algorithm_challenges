@@ -197,22 +197,17 @@ function countApplesAndOranges(s, t, a, b, apples, oranges) {
     
 
 
-    function kangaroo(x1, v1, x2, v2) {
-        let b;
-        let apple = x1 + v1;
-        let pear = x2 + v2;
-        let orange = x1 + (v1* b) 
-        let kiwi = x2 + (v2* b)
-        // x1 + v1(a) === x2 + v2 * a
-        if (x2 > x1 && v2 > x2){
-            return "NO";
-        } else if(apple === pear ){
-            return "YES"
-        } else if (orange === kiwi){
-            return "YES"
-        } else {
-            return "NO"
-        }
+function kangaroo(x1, v1, x2, v2) {
+    //assume that they never meet at the same spot 
+    let sameTime = 'NO';
     
+    //now say that they they will meet at the same spot to at i 
+    for (let i = 0; i < 10000 && sameTime === 'NO'; i++) {
+        if (x1 + v1 * i == x2 + v2 * i) {
+            sameTime = 'YES';
+        }
     }
+    //return the answer outside of the for loop
+    return sameTime;
+}
 
