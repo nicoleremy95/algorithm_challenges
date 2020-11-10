@@ -273,3 +273,25 @@ function countingValleys(steps, path) {
     return valleys 
 
 }
+
+function jumpingOnClouds(c) {
+    // 0 0 0 1 0 0
+    let jumps = 0;
+    
+    for (let i = 0; i < c.length; i ++){
+        if (c[i] == 0 && c[i + 1] == 0){
+            if(c[i + 2] == 0){
+                i += 1;
+            }
+            jumps ++;
+           
+        } 
+        else {
+            jumps ++;
+             i += 1;
+        }
+    }
+    
+    return jumps-1;
+
+}
