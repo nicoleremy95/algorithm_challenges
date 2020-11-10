@@ -232,3 +232,20 @@ function getTotalX(a, b) {
     
     
 }
+
+function sockMerchant(n, ar) {
+    let pairs = 0;
+    let count;
+    let sortedAr = ar.sort( (a,b) => a - b)
+    
+    for (let i = 0; i < n-1 ; i ++){
+        if(sortedAr[i]===sortedAr[i + 1]){
+            pairs ++;
+            i += 1;
+        }
+        
+    }
+
+    return pairs;
+}
+
