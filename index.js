@@ -276,22 +276,32 @@ function countingValleys(steps, path) {
 
 function jumpingOnClouds(c) {
     // 0 0 0 1 0 0
+    //set the initial number of jumps to zero
     let jumps = 0;
     
+    //create a for loop that goes through all cloud values 
     for (let i = 0; i < c.length; i ++){
+        //if the value of the cloud and the next both equal zero
         if (c[i] == 0 && c[i + 1] == 0){
+            //and if the cloud second from the first equals zero
             if(c[i + 2] == 0){
+                //"jump" the cloud by adding to the iteration
                 i += 1;
             }
+            //always add to the jump count 
             jumps ++;
            
         } 
+        //if the first conditions aren't met
         else {
+            //always add to the jump count
             jumps ++;
-             i += 1;
+            //"jump" the cloud by adding to the iteration
+            i += 1;
         }
     }
     
+    //return the jump count -1 because it will always add a jump for the last cloud
     return jumps-1;
 
 }
