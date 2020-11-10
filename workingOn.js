@@ -28,3 +28,36 @@ function getTotalX(a, b) {
    
     return finalArr;
 }
+
+function repeatedString(s, n) {
+    let counter = 0;
+    let numOfA = n;
+    
+    if(s.includes('a')){
+        if(s === 'a'){
+            return numOfA;
+        } else {
+            let originalArray = s.split('');
+            let newArray= [];
+            
+            for (let i = 0; i < n; i ++){
+                if(newArray.length < n){
+                    newArray.push(originalArray[i%originalArray.length])
+                }            
+            }
+            for (let i = 0; i < newArray.length; i ++){
+                if (newArray[i] === 'a'){
+                    counter ++;
+                    numOfA = counter;
+                }
+            }   
+        }
+    } else {
+        numOfA = 0;
+        return numOfA;
+    }
+
+    //return a number representing the number of 'a'
+    return numOfA;
+}
+
