@@ -331,13 +331,17 @@ function rotLeft(a, d) {
     let newBeginning = [];
     let newEnding = [];
     for (let i = 0; i < a.length; i ++){
+        // value d also indicates the starting index of the new array. Any value of i >= d will be pushed into the newBeginning array.
         if(i>=d){
             newBeginning.push(a[i])
-        } else {
+        } 
+        //all other values will be pushed into the ending array
+        else {
             newEnding.push(a[i])
         }
     }
-    
+
+    //add the newEnding values onto the newBeginning array
     let newOrder = newBeginning.concat(newEnding);
     
     //return new array
