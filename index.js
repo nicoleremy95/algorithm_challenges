@@ -306,14 +306,40 @@ function jumpingOnClouds(c) {
 
 }
 
-function findDuplicates(list){
-    let duplicates = [];
-        for(let i = 0; i < list.length; i += 1){
+//lecture Big O Notation
+// function findDuplicates(list){
+//     let duplicates = [];
+//         for(let i = 0; i < list.length; i += 1){
+//             let current = list[i];
 
-            for (let j = 0; j < list.length; j += 1) {
+//             for (let j = 0; j < list.length; j += 1) {
+//                 if (j === i)
+//                     continue;
+//                 else if(current === list[j] && !duplicates.includes(list[j])){
+//                     duplicates.push(current)
+//                 }
+//             }
+//         }
 
-            }
+//         return duplicates;
+// }
+
+// findDuplicates(3,4,5,5,2,6,19,1,19,0);
+
+function rotLeft(a, d) {
+    //a array, d num of rotations
+    let newBeginning = [];
+    let newEnding = [];
+    for (let i = 0; i < a.length; i ++){
+        if(i>=d){
+            newBeginning.push(a[i])
+        } else {
+            newEnding.push(a[i])
         }
-
-        return duplicates;
+    }
+    
+    let newOrder = newBeginning.concat(newEnding);
+    
+    //return new array
+    return newOrder;
 }
