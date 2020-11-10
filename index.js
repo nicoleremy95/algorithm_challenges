@@ -249,3 +249,27 @@ function sockMerchant(n, ar) {
     return pairs;
 }
 
+function countingValleys(steps, path) {
+    // Write your code here
+    
+    //set valleys and counter to zero
+    let valleys = 0;
+    let counter = 0;
+    
+    //loop through each value in the path
+    for (let i = 0; i < steps ; i ++){ 
+        //if the hiker travels uphill, then check if the elevation is -1, if so, then it is a valley, and add to the counter afterwards 
+        if (path[i]==='U'){
+            if (counter == -1){
+                valleys ++
+            }
+            counter ++; 
+        }  else if (path [i] ==='D'){
+            counter --;
+        } 
+    }
+    
+    
+    return valleys 
+
+}
