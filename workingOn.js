@@ -61,3 +61,18 @@ function repeatedString(s, n) {
     return numOfA;
 }
 
+
+function minimumBribes(q) {
+    let bribes = 0;
+    for (let i = 0; i < q.length; i ++){
+        if(q[i]-q[i+1] == 1){
+            bribes += 1
+        } else if (q[i]-q[i+1] == 2){
+            bribes += 2
+        } else if (q[i]-q[i+1] > 2) {
+            console.log("Too chaotic")
+            return;
+        }
+    } 
+    console.log(bribes) ;
+}
