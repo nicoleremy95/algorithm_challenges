@@ -305,3 +305,15 @@ function jumpingOnClouds(c) {
     return jumps-1;
 
 }
+
+function findDuplicates(list){
+    let duplicates = [];
+        for(let i = 0; i < list.length; i += 1){
+
+            for (let j = 0; j < list.length; j += 1) {
+
+            }
+        }
+
+        return duplicates;
+}
