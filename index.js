@@ -347,3 +347,34 @@ function rotLeft(a, d) {
     //return new array
     return newOrder;
 }
+
+
+//COUNT SWAPS AND PRINT FIRST AND LAST INDEX USING BUBBLE SORT 
+function countSwaps(a) {
+    let count = 0;
+    let firstElement;
+    let lastElement;
+    //for loop
+    for (let i = a.length; i > 0; i--) {
+        for (let j = 0; j < i-1 ; j++) {
+            // Swap adjacent elements if they are in decreasing order
+            if (a[j] > a[j + 1]) {
+                let temp = a[j];
+                a[j]= a[j+1];
+                a[j+1] = temp;
+                count ++;
+            }
+        }
+        //establish first index 
+        firstElement = a[0];
+        //establish last index
+        let indexLast = a.length-1
+        lastElement = a[indexLast]
+    
+    }
+    //console log
+    console.log(`Array is sorted in ${count} swaps.`)
+    console.log(`First Element: ${firstElement}`)
+    console.log(`Last Element: ${lastElement}`)
+
+}
