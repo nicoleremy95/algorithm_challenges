@@ -380,16 +380,24 @@ function countSwaps(a) {
 }
 
 function maximumToys(prices, k) {
+    //set toys and sum at 0;
     let toys = 0; 
     let sum = 0;
+    //sort prices array 
     let arr = prices.sort((a,b)=> a-b)
+        //create for loop 
         for (let i = 0; i < arr.length; i ++){
+            //at each index, add the value to the sum
             sum += arr[i]
+            //increase toy count 
             toys ++;
+            // check the value of the sum is greater than k 
             if (sum > k){
+                //if so, then take away the last index value and break out of the for loop
                 toys -= 1;
                 break;
             }
-        }    
+        }  
+    //return the number of toys   
     return toys;
 }
