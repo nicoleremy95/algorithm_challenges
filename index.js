@@ -378,3 +378,18 @@ function countSwaps(a) {
     console.log(`Last Element: ${lastElement}`)
 
 }
+
+function maximumToys(prices, k) {
+    let toys = 0; 
+    let sum = 0;
+    let arr = prices.sort((a,b)=> a-b)
+        for (let i = 0; i < arr.length; i ++){
+            sum += arr[i]
+            toys ++;
+            if (sum > k){
+                toys -= 1;
+                break;
+            }
+        }    
+    return toys;
+}
