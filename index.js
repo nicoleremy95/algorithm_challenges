@@ -401,3 +401,31 @@ function maximumToys(prices, k) {
     //return the number of toys   
     return toys;
 }
+
+//Complete the checkMagazine function below.
+function checkMagazine(magazine, note) {
+    //create an empty map(object)
+    let workMap = {};
+    //set the initial answer to yes
+    let replicate = "Yes";
+    
+    //loop through the words in the magazine array and either initialize them or add to their quantity
+    for (var i of magazine){
+        workMap[i] = (workMap[i] || 0) + 1;
+    }
+    
+    //loop through the words in the note and subtract from the workMap, if the answer is 0 or more, we have enough words 
+    for (var i of note){
+        workMap[i] = (workMap[i] || 0) -1
+    }
+    
+    //loop through the workMap and if we have less than 0 we can't replicate the note 
+    for (var i in workMap){
+        if(workMap[i] < 0){
+        replicate = "No";
+        }
+    }
+    
+    console.log(replicate);
+
+}
