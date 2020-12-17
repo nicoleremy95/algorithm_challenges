@@ -434,19 +434,26 @@ function checkMagazine(magazine, note) {
 function makeAnagram(a, b) {
     //"aneis" "wnaien"
     //compare two strings, if the number of a's in a is greater than b, subtract
+
+    //create an object or map to hold keys(characters) and values(number of occurances)
     let wordMap = {};
+
+    //count variable will keep track of the number of deletions
     let count = 0;
+
+    //edge case, if either of the strings are empty, return null
     if(a.length < 1 || b.length < 1){
         return null;
     } else {
+        //for each char in a, create a new object
         for(let i of a){
             wordMap[i] = (wordMap[i] || 0) + 1  
         }
-    
+        //for each char in b, create a new object, however, if it already exists, subtract from count
         for(let i of b){
             wordMap[i] = (wordMap[i] || 0) - 1
         }
-        
+        //if the count is not zero, then we know that the char only appears once and must be deleted. Add the absolute value of the value at the given key to the count
         for(let i in wordMap){
             if(wordMap[i] > 0 || wordMap[i] < 0){
                 count += Math.abs(wordMap[i]);
