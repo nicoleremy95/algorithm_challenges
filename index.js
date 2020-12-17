@@ -429,3 +429,29 @@ function checkMagazine(magazine, note) {
     console.log(replicate);
 
 }
+
+
+function makeAnagram(a, b) {
+    //"aneis" "wnaien"
+    //compare two strings, if the number of a's in a is greater than b, subtract
+    let wordMap = {};
+    let count = 0;
+    if(a.length < 1 || b.length < 1){
+        return null;
+    } else {
+        for(let i of a){
+            wordMap[i] = (wordMap[i] || 0) + 1  
+        }
+    
+        for(let i of b){
+            wordMap[i] = (wordMap[i] || 0) - 1
+        }
+        
+        for(let i in wordMap){
+            if(wordMap[i] > 0 || wordMap[i] < 0){
+                count += Math.abs(wordMap[i]);
+            }   
+        } 
+        return count;
+    }
+}
