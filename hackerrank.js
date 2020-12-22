@@ -462,3 +462,25 @@ function makeAnagram(a, b) {
         return count;
     }
 }
+
+
+function twoStrings(s1, s2) {
+    let strMap = {};
+    
+    let common = "NO";
+    
+    //create an object for each letter of s1
+    for(let key of s1){
+        strMap[key] = (strMap[key] || 0 ) + 1
+    }
+    
+    //if the key of s2 exists in the strMap, common = 'yes'
+    for (let key of s2){
+        if(strMap[key]){
+            common = 'YES';
+            break
+        }
+    }
+
+    return common;
+}
