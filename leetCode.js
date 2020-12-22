@@ -40,3 +40,19 @@ var isMajorityElement = function(nums, target) {
         return false;
     }
 };
+
+var majorityElement = function(nums) {
+    
+    let hashMap = {};
+    
+    for(let i of nums){
+        hashMap[i] = (hashMap[i] || 0) + 1
+    }
+    
+    for(let i in hashMap){
+        if(hashMap[i] > nums.length/2){
+           return i;
+        }
+    }  
+
+};
