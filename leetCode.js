@@ -25,3 +25,18 @@ var majorityElement = function(nums) {
     }
     return arr;
 };
+
+var isMajorityElement = function(nums, target) {
+    let count = 0;
+    //if target appears more than nums.length/2; return true
+    for(let i = 0; i < nums.length; i ++){
+        if(nums[i] === target) {
+            count ++;
+        }
+    }
+    if (count > nums.length/2){
+        return true;
+    } else{
+        return false;
+    }
+};
