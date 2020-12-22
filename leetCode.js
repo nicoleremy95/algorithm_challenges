@@ -9,3 +9,19 @@ var findTarget = function(root,k){
 
     }
 }
+
+var majorityElement = function(nums) {
+    let newMap = {};
+    let arr = [];
+    
+    for(let i of nums){
+        newMap[i] = (newMap[i] || 0) + 1
+    }
+    
+    for(let i in newMap){
+        if(newMap[i] > nums.length/3){
+            arr.push(i)
+        }
+    }
+    return arr;
+};
