@@ -89,3 +89,29 @@ function findMajority(arr){
   }
   
   findMajority([2, 5, 4, 3, 0, 4, 1, 7])
+
+
+
+  //SHUFFLE ARRAY 
+  var shuffle = function(nums, n) {
+    /*
+      1 create a new array
+      2 loop through and put index 0 and index n, then increase each value by 1 
+      3 push new elements into a new array
+        newArr.push(nums[0]) newArr.push(nums[n])
+    */
+    //time complexity O(n)
+    //space complexity O(n)
+    let newArr = [];
+    let x = 0;
+    let y = n;
+    
+    for(let i = 0; i < n; i ++){
+        newArr.push(nums[x]);
+        newArr.push(nums[y]);
+        x ++;
+        y ++;
+    }
+    
+    return newArr;
+  }
