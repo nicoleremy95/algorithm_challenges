@@ -115,3 +115,54 @@ function findMajority(arr){
     
     return newArr;
   }
+
+
+  
+var countCharacters = function(words, chars) {
+    //initialize count
+    let count = 0;
+
+    //loop through each word in the words array; for loop
+    for(let word of words){
+         //loop through word in words and make hash
+        console.log("word", word)
+        let hash = {};
+        let good;
+        for(let char of word){
+            hash[char] = (hash[char] || 0 ) + 1;
+        }
+        console.log("hash", hash)
+
+        // loop through chars in char and subtract from the original hash
+        for(let char of chars){
+            hash[char] = (hash[char] || 0) -1;
+        }
+        console.log("char", hash)
+       
+        //loop through hash and if the value of each character is less than 1, then the word is a "good" string and set good to true
+        for(let i in hash){
+            if (hash[i] > 0) {
+              good = false;
+              break;
+            }
+            else {
+              good = true;
+            }
+        }
+
+        //if good is true, add to count 
+        if(good === true){
+          console.log("good === true")
+          console.log("word length", word.length)
+          count += word.length
+          console.log("count", count)
+        } else {
+          console.log("good === false")
+        }
+    }
+    
+    return count;   
+};
+
+countCharacters(["cat","bt","hat","tree"], "atach");
+// countCharacters(["hello","world","leetcode"], "welldonehoneyr");
