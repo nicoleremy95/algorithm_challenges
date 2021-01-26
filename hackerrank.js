@@ -466,9 +466,7 @@ function makeAnagram(a, b) {
 
 function twoStrings(s1, s2) {
     let strMap = {};
-    
-    let common = "NO";
-    
+        
     //create an object for each letter of s1
     for(let key of s1){
         strMap[key] = (strMap[key] || 0 ) + 1
@@ -477,10 +475,62 @@ function twoStrings(s1, s2) {
     //if the key of s2 exists in the strMap, common = 'yes'
     for (let key of s2){
         if(strMap[key]){
-            common = 'YES';
-            break
+            return 'YES';
         }
     }
 
-    return common;
+    return 'NO';
 }
+
+//Another way to write the twoStrings function
+function twoStrings(s1, s2) {
+    let strMap = {};
+    
+    //create an object for each letter of s1
+    for(let i of s1){
+        strMap[i] = strMap[i] || 0
+    }
+    
+    //loop through s2 and see if key exists in strMap  
+    for (let i of s2){
+        if(strMap.hasOwnProperty(i)){
+            return "YES";
+        }
+    }
+    
+    return 'NO';
+
+};
+
+
+function commonSubstring(arr1, arr2){
+    for(let i = 0; i < arr1.length; i ++){
+      let strMap = {};
+      let common = 'NO';
+      
+      //create an object for each letter of s1
+      for(let j of arr1[i]){
+          strMap[j] = strMap[j] || 0
+          // console.log(strMap);
+      }
+      
+      //loop through s2 and see if key exists in strMap  
+      for (let j of arr2[i]){
+          if(strMap.hasOwnProperty(j)){
+              // console.log(j, "YES");
+              common = 'YES';
+              console.log(common);
+              break;
+          }         
+      }
+      if(common === 'NO'){
+        console.log(common);  
+      }
+      
+    }
+  }
+  
+  commonSubstring(["hello", "world", "flow"], ["sun", "garden", "experience"] );
+  
+  
+  
