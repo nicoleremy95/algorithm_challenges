@@ -166,3 +166,23 @@ var countCharacters = function(words, chars) {
 
 countCharacters(["cat","bt","hat","tree"], "atach");
 // countCharacters(["hello","world","leetcode"], "welldonehoneyr");
+
+
+var maxSubArray = function(nums) {
+    let sum = 0;
+    let largestNum = Math.max(...nums);
+    if(nums.length == 1) return nums[0];
+    
+    for (let i in nums) {
+        sum += nums[i];
+        if (sum >= largestNum) {
+            largestNum = sum;
+        }
+        if (sum < 0) {
+            sum  = 0;
+        }
+
+    }
+    return largestNum;
+
+};
