@@ -171,6 +171,10 @@ countCharacters(["cat","bt","hat","tree"], "atach");
 var maxSubArray = function(nums) {
     let sum = 0;
     let largestNum = Math.max(...nums);
+    //OR
+    // let largestOutput = -9223372036854775808
+    //OR
+    // let largestOutput = -Number.MAX_SAFE_INTEGER - 1
     if(nums.length == 1) return nums[0];
     
     for (let i in nums) {
