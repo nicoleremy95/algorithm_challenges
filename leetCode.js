@@ -190,3 +190,35 @@ var maxSubArray = function(nums) {
     return largestNum;
 
 };
+
+var numberOfSteps  = function(num) {
+    //1. set initial counter; let count = 0
+    //2. set initial number; let number = num
+    //2. while num > 0...see if num is even or odd
+    //  1. if even, divide number by 2 and add 1 to count 
+    //  2. if odd, subtract 1 from number and add 1 to count
+    //3. when num == 0, return count 
+    
+    //WAY 1
+    //     let count = 0;
+        
+    //     if(num == 0) return 0;
+        
+    //     while(num > 0){
+    //         if(num % 2 == 0) num /= 2; 
+    //         else num -= 1;
+    //         count ++;
+            
+    //     } 
+    //     return count;
+   
+    //WAY 2
+    const binary = num.toString(2)
+    console.log(binary)
+    let count = binary.length-1;
+    for(let i = 0; i <binary.length; i ++){
+        if(binary[i] === "1") count ++;
+    }
+    return count;
+
+};
