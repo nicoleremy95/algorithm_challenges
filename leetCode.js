@@ -222,3 +222,18 @@ var numberOfSteps  = function(num) {
     return count;
 
 };
+
+var restoreString = function(s, indices) {
+    // s = "codeleet", indices = [4,5,6,7,0,2,1,3]
+     
+     //1.create a new arr; let arr = [];
+     //2.relate s[i] and indices[i] 
+     //3.store value of s[i] as the index of indices[i] ex. str[4] = 'c';
+     //3.After going through all s and indices, add to str 
+     
+     const arr = [];
+     for(let i = 0; i<indices.length; i++) {
+         arr[indices[i]] = s[i];
+     }
+     return arr.join('') 
+ };
