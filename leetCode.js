@@ -237,3 +237,33 @@ var restoreString = function(s, indices) {
      }
      return arr.join('') 
  };
+
+ var decompressRLElist = function(nums) {
+    //nums 0, 2, 4, 6 etc ... are freq
+    //nums 1,3,5, etc... are values 
+    
+    //create new array, let array = [];
+    //loop through nums and create hash map
+    //  if even index or 0, store as freq
+    //  if odd index, store as value
+    //  ex {freq:value}
+    //loop through hash map and push new values into new array
+    
+    //have original array and mutate 
+    
+    let array = [];
+    
+    const times = x => f => {
+      if (x > 0) {
+        f()
+        times (x - 1) (f)
+      }
+    };
+    
+    for(let i = 0; i <nums.length; i += 2){
+      times (nums[i]) (() => array.push(nums[i+1]));
+    };
+    
+    return array;
+    
+};
