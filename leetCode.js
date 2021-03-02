@@ -267,3 +267,29 @@ var restoreString = function(s, indices) {
     return array;
     
 };
+
+var countMatches = function(items, ruleKey, ruleValue) {
+    // type 0,  color 1, name 2
+    
+    //find item where item has ruleKey and ruleValue
+    //set counter ; let counter = 0
+    
+    //assign ruleKey index, ex. color is index 1
+    //loop through items and find item[i]i
+        //if item[i]i has the same value as the ruleValue, add 1 to counter
+    
+    let compare;
+    let counter = 0;
+    
+    if(ruleKey === "type") compare = 0;
+    if(ruleKey === "color") compare = 1;
+    if(ruleKey === "name") compare = 2;
+    
+    for ( let i = 0; i < items.length; i ++){
+        if(ruleValue === (items[i][compare])){
+            counter ++;
+        }
+    }
+    
+    return counter;
+};
