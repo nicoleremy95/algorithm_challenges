@@ -293,3 +293,27 @@ var countMatches = function(items, ruleKey, ruleValue) {
     
     return counter;
 };
+
+var isPalindrome = function(head) {
+    let arr = [];
+    
+    while(head!== null){
+        arr.push(head.val);
+        head = head.next;
+    }
+    
+    
+    const check = [...arr];
+    check.reverse();
+    console.log("array", arr)
+    console.log("check", check)
+    
+    for(let i = 0; i <arr.length ; i ++){
+        if(arr[i] !== check[i]) return false
+        console.log(arr[i], check[i])
+    }
+    
+    return true;
+    
+    
+};
